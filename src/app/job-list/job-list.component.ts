@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-
-import { jobs } from '../jobs';
+import { Component, OnInit } from '@angular/core';
+// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+// import { JobsService } from '../jobs.service';
 
 @Component({
   selector: 'app-job-list',
@@ -8,11 +8,21 @@ import { jobs } from '../jobs';
   styleUrls: ['./job-list.component.css']
 })
 export class JobListComponent {
-  jobs = jobs;
+  jobs = []
+
+  // constructor(private jobsService: JobsService) { }
+
+  ngOnInit() {
+    // console.log(15, this.JobsService)
+
+    // this.jobsService.getGithubJobs().subscribe((data: any[])=>{
+    //   console.log(17, data);
+    //   this.jobs = data;
+    // })
+  }
 
   share() {
     window.alert('The job has been shared!');
   }
+
 }
-
-

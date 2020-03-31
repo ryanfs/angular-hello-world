@@ -1,8 +1,21 @@
-<h2>Products</h2>
+<h2>Jerbs</h2>
 
+<mat-spinner color="Accent" *ngIf="jobs.length === 0"></mat-spinner>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
+<div *ngFor="let job of jobs">
+  <h3>
+    <a [title]="job.title + ' details'">
+      {{ job.title }}
+    </a>
+  </h3>
+
+  <p *ngIf="job.description">
+    Description: {{ job.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+
+</div>
